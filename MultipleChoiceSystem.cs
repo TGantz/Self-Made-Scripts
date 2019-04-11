@@ -7,57 +7,77 @@ using UnityEngine.UI;
 //Requires no alterations in script for each question.  It is attached to the desired Screen parent object.
 
 public class MultipleChoiceSystem : MonoBehaviour
-{
-    public Text questionNumberText;                                                             //Text appearing on the cover screen that appears before the question is started.  Will be used to show the question number.
+{   /* Text appearing on the cover screen that 
+    appears before the question is started.  
+    Will be used to show the question number.*/
+    public Text questionNumberText;
 
-    public Text questionText;                                                                   //Text object in game that will display the chosen question string
+    /* Text object in game that 
+    will display the chosen question string.*/
+    public Text questionText;
 
-    public Text answerA;                                                                        //Child text objects for the onscreen buttons for the question
+    /* Child text objects for the 
+    onscreen buttons for the question.*/
+    public Text answerA;                                                                        
     public Text answerB;
     public Text answerC;
     public Text answerD;
 
-    public Text questionTimer;                                                                  //Text object that will display the questionTimer integer
-
-    public Text correctIncorrectText;                                                           //Text object on the correct/incorrect screen that appears after the question is complete
+    /*Text object that will 
+    display the questionTimer integer.*/
+    public Text questionTimer;
+    
+    // Text object on the correct/incorrect screen that appears after the question is complete.
+    public Text correctIncorrectText;                                                           
 
     public string questionNumber;
 
-    public string questionOption1;                                                              //Each multiple choice question has 3 randomized options that can appear when the question is initiated.
-    public string questionOption1A;                                                             //Answer choices for question option 1
+    // Each multiple choice question has 3 randomized options that can appear when the question is initiated.
+    // Answer choices for question option 1
+    public string questionOption1;                                                              
+    public string questionOption1A;                                                             
     public string questionOption1B;
     public string questionOption1C;
     public string questionOption1D;
 
+    // Answer choices for question option 2
     public string questionOption2;
-    public string questionOption2A;                                                             //Answer choices for question option 2
+    public string questionOption2A;                                                             
     public string questionOption2B;
     public string questionOption2C;
     public string questionOption2D;
 
+    // Answer choices for question option 3
     public string questionOption3;
-    public string questionOption3A;                                                             //Answer choices for question option 3
+    public string questionOption3A;                                                             
     public string questionOption3B;
     public string questionOption3C;
     public string questionOption3D;
 
-    public string question1CorrectAnswer;                                                       //Correct answer(A, B, C, or D) can be chosen in the inspector for each question option.
+    // Correct answer(A, B, C, or D) can be chosen in the inspector for each question option.
+    public string question1CorrectAnswer;                                                       
     public string question2CorrectAnswer;
     public string question3CorrectAnswer;
     private string correctAnswer;
+
 
     private bool correct = false;
     private bool incorrect = false;
     private bool questionComplete = false;
 
-    public float questionTimeLimit;                                                             //Time limit for the player to input an answer
-    public bool keyInserted = false;                                                            //Bool controlled by a script on the key slot using a trigger collider to detect if the key is inserted by checking the tag of the object inserted.
+    // Time limit for the player to input an answer
+    public float questionTimeLimit;
 
-    public GameObject questionCanvas;                                                           //Game Objects will be activated when the key is inserted for activation, cover will disappear when "Start Question" is pressed, Correct/Incorrect appear after question is complete
+    //  Bool controlled by a script on the key slot using a trigger collider to detect if the key is inserted by checking the tag of the object inserted.
+    public bool keyInserted = false;                                                            
+
+    // Game Objects will be activated when the key is inserted for activation, cover will disappear when "Start Question" is pressed, Correct/Incorrect appear after question is complete
+    public GameObject questionCanvas;                                                           
     public GameObject questionCover;
     public GameObject correctIncorrectScreen;
 
-    public GameObject generalScripts;                                                           //Empty object that holds general scripts.  Used to access the health script.
+    //Empty object that holds general scripts.  Used to access the health script.
+    public GameObject generalScripts;                                                           
 
     //Everything inside this function is established when the game starts, including the selected random question and its
     //provided answer choices, correct answers, and screen settings.

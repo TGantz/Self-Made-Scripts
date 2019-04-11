@@ -25,18 +25,18 @@ public class CircuitOpensDoor : MonoBehaviour
     public GameObject battery120;
     public GameObject battery150;
 
-    private float inputResistance = 0.0f;   //Float variables when a resistor is plugged into
-    private float outputResistance = 0.0f;
-    private float inputVoltage = 0.0f;
+    private float inputResistance = 0.0f;   //Float variable for resistance of the resistor plugged into the input resistor port   
+    private float outputResistance = 0.0f;  //Float variable for resistance of the resistor plugged into the output resistor port 
+    private float inputVoltage = 0.0f;      //Float variable for voltage of battery inserted into the port
 
-    public float outputVoltage = 0.0f;
-    public float outputResistorPower = 0.0f;
+    public float outputVoltage = 0.0f;          //Calculation of voltage using voltage divider formula
+    public float outputResistorPower = 0.0f;    //Calulation of power dissipated by the output resistor using the power formula;
 
-    public bool inputResistorInserted = false;
+    public bool inputResistorInserted = false;  //Bool values tracking whether a resistor/battery is inserted into the respective ports
     public bool outputResistorInserted = false;
     public bool batteryInserted = false;
 
-    public Animator doorAnimator;
+    public Animator doorAnimator;   
     public Renderer doorLight;
     public Material baseColor;
     public Material greenEmission;
